@@ -21,6 +21,7 @@
       "ES2015",
       "DOM",
       "ScriptHost"],
+    "strictNullChecks": false,
     "paths": {
       "@app/*": ["src/app/*"],
       "@environments/*": ["src/environments/*"]

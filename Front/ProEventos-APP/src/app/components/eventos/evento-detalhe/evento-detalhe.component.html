@@ -100,7 +100,7 @@
         </div>
       </form>
     </div>
-    
+
     <div class="card rounded shadow-sm mt-3" *ngIf="modoEditar">
       <div class="p-3">
         <div class="d-flex border-bottom">
@@ -132,25 +132,25 @@
                   <label>Nome</label>
                   <input
                   [ngClass]="cssValidator(f.nome)"
-                  type="text" class="form-control" 
-                  formControlName="nome" 
+                  type="text" class="form-control"
+                  formControlName="nome"
                   placeholder="Lote">
                 </div>
                 <div class="form-group col-md-4">
                   <label>Quantidade</label>
                   <input
                   [ngClass]="cssValidator(f.quantidade)"
-                  type="text" class="form-control" 
-                  formControlName="quantidade" 
+                  type="text" class="form-control"
+                  formControlName="quantidade"
                   placeholder="000">
                 </div>
                 <div class="form-group col-md-4">
                   <label>Preço</label>
                   <input
                   [ngClass]="cssValidator(f.preco)"
-                  type="text" currencyMask class="form-control" 
+                  type="text" currencyMask class="form-control"
                   [options]="{prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left'}"
-                  formControlName="preco" 
+                  formControlName="preco"
                   placeholder="R$ 0,00">
                 </div>
                 <div class="form-group col-md-4">
@@ -158,8 +158,8 @@
                   <input
                   bsDatepicker
                   value="{{lotes.get(i+ '.dataInicio')?.value| date:'dd/mm/yyyy'}}"
-                  type="datetime" class="form-control" 
-                  formControlName="dataInicio" 
+                  type="datetime" class="form-control"
+                  formControlName="dataInicio"
                   placeholder="01/01/2019"
                   (bsValueChange)="mudarValorData($event, i, 'dataInicio')">
                 </div>
@@ -168,8 +168,8 @@
                   <input
                   bsDatepicker
                   value="{{lotes.get(i+ '.dataFim')?.value | date:'dd/mm/yyyy'}}"
-                  type="datetime" class="form-control" 
-                  formControlName="dataFim" 
+                  type="datetime" class="form-control"
+                  formControlName="dataFim"
                   placeholder="01/01/2019"
                   (bsValueChange)="mudarValorData($event, i, 'dataFim')">
                 </div>
@@ -180,7 +180,7 @@
       </div>
       <button (click)="addLote()" class="d-flex btn btn-outline-primary">
         <i class="fa fa-plus-circle my-1"></i>
-        <b class="ml-1">Lote</b>  
+        <b class="ml-1">Lote</b>
       </button>
     </div>
     <div class="card-footer">
@@ -240,7 +240,7 @@
         </div>
       </div>
     </div>
-  </div>  
+  </div>
 </div>
 
 <br>

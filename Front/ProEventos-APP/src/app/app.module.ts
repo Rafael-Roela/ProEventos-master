@@ -1,13 +1,14 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { defineLocale } from 'ngx-bootstrap/chronos';
@@ -43,6 +44,8 @@ import { RegistrationComponent } from './components/user/registration/registrati
 
 import { FileUploadModule } from 'ng2-file-upload';
 import { HomeComponent } from './components/home/home.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { browser } from 'protractor';
 
 
 defineLocale('pt-br', ptBrLocale);
@@ -65,9 +68,10 @@ defineLocale('pt-br', ptBrLocale);
     RegistrationComponent,
    ],
   imports: [
-    BrowserModule,
+    NgxSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -75,6 +79,7 @@ defineLocale('pt-br', ptBrLocale);
     TooltipModule.forRoot(),
     BsDropdownModule.forRoot(),
     BsDatepickerModule.forRoot(),
+    PaginationModule.forRoot(),
     ModalModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 3000,
