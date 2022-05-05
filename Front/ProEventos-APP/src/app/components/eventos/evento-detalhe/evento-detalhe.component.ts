@@ -18,14 +18,14 @@ import { environment } from '@environments/environment';
   styleUrls: ['./evento-detalhe.component.scss'],
 })
 export class EventoDetalheComponent implements OnInit {
-  modalRef!: BsModalRef;
-  eventoId!: number;
+  modalRef: BsModalRef;
+  eventoId: number;
   evento = {} as Evento;
-  form!: FormGroup;
+  form: FormGroup;
   estadoSalvar = 'post';
   loteAtual = {id: 0, nome: '', indice: 0};
   imagemURL = 'assets/img/upload.jpg';
-  file!: File;
+  file: File;
 
   get modoEditar(): boolean {
     return this.estadoSalvar === 'put';
@@ -178,8 +178,18 @@ export class EventoDetalheComponent implements OnInit {
     }
   }
   public salvarLotes(): void {
-    if (this.form.controls.lotes.valid){
-      this.loteService.saveLote(this.eventoId, this.form.value.lotes).subscribe();
+    if (this.form.controls.lotes.valid) {
+      this.loteService
+        .saveLote(this.eventoId, this.form.value.lotes)
+        .subscribe(
+          () => {
+            this.toastr.success('Lotes salvos com Sucesso!', 'Sucesso!');
+          },
+          (error: any) => {
+            this.toastr.error('Erro ao tentar salvar lotes.', 'Erro');
+            console.error(error);
+          }
+        );
     }
   }
 
